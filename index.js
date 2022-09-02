@@ -58,10 +58,12 @@ const zooAnimals = [
     3. Return the new array
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
+  
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+
+  function animalNames(){
   }
+  
 
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -165,9 +167,9 @@ function greeting(first, last){
   
 // 🦁🦁🦁 Step 3: Check your work by un-commenting the following calls to consume(): 🦁🦁🦁 
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
- console.log(consume(2, 2, add)); // 4
- console.log(consume(10, 16, multiply)); // 160
- console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
+ //console.log(consume(2, 2, add)); // 4
+ //console.log(consume(10, 16, multiply)); // 160
+ //console.log(consume("Mary", "Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 
@@ -184,8 +186,10 @@ function greeting(first, last){
 - Instances of CuboidMaker should initialize `length`, `width` and `height` properties
 */
 
-function CuboidMaker(/*Your Code Here */){
-  /*Your Code Here */
+function CuboidMaker(object){
+  this.length = object.length;
+  this.width = object.width;
+  this.height = object.height;
 }
 
 
@@ -194,6 +198,9 @@ function CuboidMaker(/*Your Code Here */){
   💡 NOTE: Formula for cuboid volume: length * width * height   
 */
 
+CuboidMaker.prototype.volume = function(volume) {
+  return volume = this.length * this.width * this.height;
+}
 
 
 
@@ -202,6 +209,9 @@ function CuboidMaker(/*Your Code Here */){
   💡 NOTE: Formula for cuboid surface area: 2 * (length * width + length * height + width * height)  
 */
 
+CuboidMaker.prototype.surfaceArea = function(surfaceArea) {
+  return surfaceArea = 2 * (this.length * this.width + this.length * this.height + this.width * this.height); 
+}
 
 
 
@@ -210,13 +220,19 @@ function CuboidMaker(/*Your Code Here */){
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid. */
 
 
+ let cuboid = new CuboidMaker({
+  length: 4,
+  width: 5,
+  height: 5
+ });
+
 
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
-// console.log(cuboid.volume()); // 100
-// console.log(cuboid.surfaceArea()); // 130
+ console.log(cuboid.volume()); // 100
+ console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
